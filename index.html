@@ -4,44 +4,83 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sunil Reddy Aramreddys | PhD Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #f4f7fa;
       color: #333;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
     header {
-      background-color: #004080;
+      background: linear-gradient(135deg, #004080, #0059b3);
       color: white;
-      padding: 2rem;
+      padding: 2.5rem 1rem;
       text-align: center;
     }
     header h1 {
-      margin: 0 0 0.5rem 0;
+      margin: 0;
+      font-size: 2.5rem;
     }
+    header p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
     section {
       padding: 2rem;
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
     }
+
     h2 {
       color: #004080;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
       border-bottom: 2px solid #004080;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.4rem;
     }
+
+    .card {
+      background-color: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #0059b3;
+    }
+
     ul {
       list-style: none;
-      padding: 0;
+      padding-left: 1rem;
     }
     li::before {
-      content: "\2022";
+      content: "\\2022";
       color: #004080;
       display: inline-block;
       width: 1em;
       margin-left: -1em;
     }
+
+    .skills span {
+      display: inline-block;
+      background: #004080;
+      color: white;
+      padding: 6px 14px;
+      margin: 5px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+
     .contact a {
       color: #004080;
       text-decoration: none;
@@ -49,20 +88,25 @@
     .contact a:hover {
       text-decoration: underline;
     }
-    .degree-block {
-      margin-bottom: 1.5rem;
-    }
-    .degree-block h3 {
-      margin: 0.5rem 0 0.2rem 0;
-    }
+
     .logo {
       height: 24px;
       vertical-align: middle;
       margin-right: 10px;
     }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Sunil Reddy Aramreddys</h1>
     <p>PhD Student, University of Missouri–Kansas City</p>
@@ -71,123 +115,122 @@
 
   <section>
     <h2>🧐 Research Interests</h2>
-    <ul>
-      <li>Biometrics</li>
-      <li>Artificial Intelligence (AI)</li>
-      <li>Machine Learning (ML)</li>
-    </ul>
+    <div class="card">
+      <ul>
+        <li>Biometrics</li>
+        <li>Artificial Intelligence (AI)</li>
+        <li>Machine Learning (ML)</li>
+      </ul>
+    </div>
   </section>
 
   <section>
     <h2>📌 About Me</h2>
-    <p>I am a first-year PhD student in the Department of Computer Science at the University of Missouri–Kansas City. I began my doctoral journey in January 2025 under the supervision of Dr. Reza Derakhshani. My research revolves around biometric systems and intelligent machine learning techniques that enhance security and human-computer interaction.</p>
+    <div class="card">
+      <p>I am a first-year PhD student in the Department of Computer Science at the University of Missouri–Kansas City. I began my doctoral journey in January 2025 under the supervision of Dr. Reza Derakhshani. My research revolves around biometric systems and intelligent machine learning techniques that enhance security and human-computer interaction.</p>
+    </div>
   </section>
 
   <section>
     <h2>🚀 Current Project</h2>
-    <h3>Wrist Vein Scanner Biometric System</h3>
-    <p>
-      I am developing a real-time biometric authentication system that captures and verifies wrist vein patterns using near-infrared (NIR) imaging. 
-      The system is deployed on the <strong>NVIDIA Jetson Orin Nano</strong>, supporting both battery and power supply operation for flexible deployment in mobile or stationary environments.
-    </p>
-    <p>
-      It includes a custom PCB interface with an OLED display and physical controls, and uses techniques like HDR image fusion, CLAHE, and hair removal to enhance vein visibility. 
-      Feature extraction is performed using a <strong>ResNet50-ArcFace model</strong>, and <strong>shallow neural networks (SNNs)</strong> are trained to generate 32-bit biometric keys, verified via SHA256 hashing and Hamming distance comparison.
-    </p>
+    <div class="card">
+      <h3>Wrist Vein Scanner Biometric System</h3>
+      <p>
+        I am developing a real-time biometric authentication system that captures and verifies wrist vein patterns using near-infrared (NIR) imaging. 
+        The system is deployed on the <strong>NVIDIA Jetson Orin Nano</strong>, supporting both battery and power supply operation.
+      </p>
+      <p>
+        It includes a custom PCB interface with an OLED display and physical controls, and uses HDR image fusion, CLAHE, and hair removal. Features are extracted with <strong>ResNet50-ArcFace</strong> and verified via <strong>SNNs</strong> and SHA256.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📂 Previous Projects</h2>
+    <div class="card">
+      <h3>Software Requirements and NLP</h3>
+      <p>Used NLP to analyze software requirement documents and extract key requirements using entity recognition and POS tagging.</p>
+
+      <h3>A Simple Blockchain Application</h3>
+      <p>Built a simple blockchain to understand core concepts like hashing, blocks, and consensus mechanisms.</p>
+
+      <h3>Detection of Data Leakage</h3>
+      <p>Developed algorithms to detect and prevent unauthorized access to sensitive data using anomaly detection techniques.</p>
+
+      <h3>Distributed Information Sharing App</h3>
+      <p>Created a decentralized app to securely share information among users using cryptographic protocols.</p>
+
+      <h3>Medical Advisory App</h3>
+      <p>Developed a PHP+JS app to let patients chat with doctors for advice if they couldn’t secure appointments.</p>
+    </div>
   </section>
 
   <section>
     <h2>🎓 Education</h2>
+    <div class="card">
+      <h3><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/University_of_Missouri–Kansas_City_seal.svg/1200px-University_of_Missouri–Kansas_City_seal.svg.png" class="logo">University of Missouri-Kansas City</h3>
+      <p><strong>PhD, Computer Science</strong> | Jan 2025 – Dec 2027</p>
+      <p><em>Skills:</em> Deep Learning, Digital Image Processing, AI, Jetson Orin Nano</p>
 
-    <div class="degree-block">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/University_of_Missouri–Kansas_City_seal.svg/1200px-University_of_Missouri–Kansas_City_seal.svg.png" alt="UMKC Logo" class="logo" />
-      <strong>University of Missouri-Kansas City</strong>
-      <h3>Doctor of Philosophy (PhD), Computer Science</h3>
-      <p>Jan 2025 – Dec 2027</p>
-      <p><em>Skills:</em> Deep Learning · Digital Image Processing · Artificial Intelligence (AI) · Jetson Orin Nano Developer Kit</p>
-    </div>
+      <h3>University of Missouri-Kansas City</h3>
+      <p><strong>Master's in Computer Science</strong> | Aug 2021 – Dec 2022</p>
 
-    <div class="degree-block">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/05/University_of_Missouri–Kansas_City_seal.svg/1200px-University_of_Missouri–Kansas_City_seal.svg.png" alt="UMKC Logo" class="logo" />
-      <strong>University of Missouri-Kansas City</strong>
-      <h3>Master's Degree, Computer Science</h3>
-      <p>Aug 2021 – Dec 2022</p>
-    </div>
+      <h3><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Innopolis_University_logo.svg/1200px-Innopolis_University_logo.svg.png" class="logo">Innopolis University</h3>
+      <p><strong>Research Internship, AI & NLP</strong> | Jan 2020 – Jul 2020</p>
 
-    <div class="degree-block">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Innopolis_University_logo.svg/1200px-Innopolis_University_logo.svg.png" alt="Innopolis Logo" class="logo" />
-      <strong>Innopolis University</strong>
-      <h3>Research Internship, Deep Learning & NLP</h3>
-      <p>Jan 2020 – Jul 2020</p>
-      <p><em>Skills:</em> Artificial Intelligence (AI) · BERT (Language Model)</p>
-    </div>
-
-    <div class="degree-block">
-      <img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Madanapalle_Institute_of_Technology_and_Science_logo.png" alt="MITS Logo" class="logo" />
-      <strong>Madanapalle Institute of Technology & Science</strong>
-      <h3>Bachelor's Degree, Computer Science</h3>
-      <p>Jul 2016 – Jun 2020</p>
+      <h3><img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Madanapalle_Institute_of_Technology_and_Science_logo.png" class="logo">MITS</h3>
+      <p><strong>Bachelor's in Computer Science</strong> | Jul 2016 – Jun 2020</p>
     </div>
   </section>
 
   <section>
     <h2>💼 Experience</h2>
-
-    <div>
-      <h3>Graduate Research Assistant</h3>
-      <p><strong>University of Missouri-Kansas City</strong> · Jan 2025 – Present</p>
+    <div class="card">
+      <h3>Graduate Research Assistant — UMKC</h3>
+      <p>Jan 2025 – Present</p>
       <ul>
-        <li>Conducting research in Biometrics and Deep Learning</li>
-        <li>Working with Jetson Nano for edge computing in image processing</li>
-        <li>Using tools like PyTorch, OpenCV, Albumentations, and CNN-based models</li>
+        <li>Researching deep learning in biometric systems</li>
+        <li>Jetson-based image processing with PyTorch/OpenCV</li>
       </ul>
-    </div>
 
-    <div>
-      <h3>Software Engineer</h3>
-      <p><strong>KloudVisio</strong> · Sep 2023 – Dec 2024</p>
-    </div>
+      <h3>Software Engineer — KloudVisio</h3>
+      <p>Sep 2023 – Dec 2024</p>
 
-    <div>
-      <h3>Software Developer & Intern</h3>
-      <p><strong>TRIOTEK IT INC</strong> · Dec 2022 – Sep 2023</p>
-      <p>Internship: Aug 2022 – Dec 2022</p>
-    </div>
+      <h3>Software Developer & Intern — TRIOTEK IT INC</h3>
+      <p>Dec 2022 – Sep 2023 | Internship: Aug 2022 – Dec 2022</p>
 
-    <div>
-      <h3>Research Assistant</h3>
-      <p><strong>Innopolis University</strong> · Jan 2020 – Jul 2020</p>
-      <ul>
-        <li>Worked on AI and NLP using BERT-based models</li>
-      </ul>
+      <h3>Research Assistant — Innopolis University</h3>
+      <p>Jan 2020 – Jul 2020</p>
     </div>
   </section>
 
   <section>
     <h2>🔧 Technical Skills</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">Python</span>
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">PyTorch</span>
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">OpenCV</span>
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">NumPy</span>
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">Jetson Nano</span>
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">Albumentations</span>
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">Convolutional Neural Networks</span>
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">Transfer Learning</span>
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">Digital Image Processing</span>
-      <span style="background:#004080; color:white; padding:6px 12px; border-radius:20px;">Artificial Intelligence</span>
+    <div class="card skills">
+      <span>Python</span>
+      <span>PyTorch</span>
+      <span>OpenCV</span>
+      <span>Jetson Nano</span>
+      <span>Albumentations</span>
+      <span>Deep Learning</span>
+      <span>CNN</span>
+      <span>Transfer Learning</span>
+      <span>NLP</span>
+      <span>Image Processing</span>
     </div>
   </section>
 
   <section>
     <h2>📝 Contact</h2>
-    <p class="contact">
-      Email: <a href="mailto:your.email@umkc.edu">your.email@umkc.edu</a><br />
-      GitHub: <a href="https://github.com/arsunilreddy">github.com/arsunilreddy</a><br />
-      LinkedIn: <a href="https://www.linkedin.com/in/sunilreddyar">linkedin.com/in/sunilreddyar</a>
-    </p>
+    <div class="card contact">
+      <p>Email: <a href="mailto:satmd@umsystem.edu">your.email@umkc.edu</a></p>
+      <p>GitHub: <a href="https://github.com/arsunilreddy" target="_blank">github.com/arsunilreddy</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sunilreddyar" target="_blank">linkedin.com/in/sunilreddyar</a></p>
+    </div>
   </section>
+
 </body>
 </html>
+
 
 
